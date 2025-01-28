@@ -3,6 +3,24 @@ import { createContext, useContext, useState } from "react";
 
 const GlobalContext = createContext();
 
+const apiKey = import.meta.env.VITE_API_KEY;
+
 function GlobalProvider({ children }) {
   const [movies, setMovies] = useState([]);
+  const [shows, setShows] = useState([]);
+
+  return (
+    <GlobalContext.Provider
+      value={{ movies, setMovies, shows, setShows }}
+    >
+      {children}
+    </GlobalContext.Provider>
+  );
 }
+
+
+const useGlobalContext = () => {
+  return useContext(GlobalContext);
+};
+
+export { useGlobalContext, GlobalProvider };
