@@ -13,10 +13,10 @@ function GlobalProvider({ children }) {
   const [series, setSeries] = useState([]);
 
   //FILM
-  const fetchFilms = (searchTerm) => {
+  const fetchFilms = (searchTerms) => {
     const options = {
       method: "GET",
-      url: `https://api.themoviedb.org/3/search/movie?query=${searchTerm}`,
+      url: `https://api.themoviedb.org/3/search/movie?query=${searchTerms}`,
       headers: {
         accept: "application/json",
         Authorization: `Bearer ${apiKey}`,
@@ -34,10 +34,10 @@ function GlobalProvider({ children }) {
   };
 
   //SERIE TV
-  const fetchSeries = (searchTerm) => {
+  const fetchSeries = (searchTerms) => {
     const options = {
       method: "GET",
-      url: `https://api.themoviedb.org/3/search/tv?query=${searchTerm}`,
+      url: `https://api.themoviedb.org/3/search/tv?query=${searchTerms}`,
       headers: {
         accept: "application/json",
         Authorization: `Bearer ${apiKey}`,
