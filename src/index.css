@@ -7,3 +7,8 @@
 header {
   background-color: black;
 }
+
+.flags {
+  height: 25px;
+  width: 40px;
+}
